@@ -27,5 +27,11 @@ export class CrudService {
     return this.clienteHttp.get(this.API+"?borrar="+ id);
   }
 
+  obtenerEmpleado(id:any):Observable<any>{
+    return this.clienteHttp.get(this.API+"?consultar="+ id);
+  }
+  editarEmpleado(id:any, datosEmpleado: Empleado):Observable<any>{
+    return this.clienteHttp.post(this.API+"?actualizar="+id, datosEmpleado);
+  }
 
 }

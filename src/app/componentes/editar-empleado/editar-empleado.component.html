@@ -4,23 +4,23 @@
     </div>
     <div class="card-body">
         
-        <form>
+        <form [formGroup]="formularioDeEmpleados" (ngSubmit)="enviarDatos()" ngNativeValidate> 
 
             <div class="mb-3">
               <label for="" class="form-label">Nombre:</label>
               <input type="text"
-                class="form-control" name="" id="" aria-describedby="helpId" placeholder="Escribe tu nombre">
+                class="form-control" formControlName="nombre" aria-describedby="helpId" placeholder="Escribe tu nombre" required>
             </div>
 
             <div class="mb-3">
               <label for="" class="form-label">Correo:</label>
               <input type="email"
-                class="form-control" name="" id="" aria-describedby="helpId" placeholder="Escribe tu correo">
+                class="form-control" formControlName="correo" aria-describedby="helpId" placeholder="Escribe tu correo" required>
             </div>
             
             <div class="btn-group" role="group" aria-label="">
-                <button type="button" class="btn btn-success">Agregar</button>
-                <button type="button" class="btn btn-primary">Cancelar</button>
+                <button type="submit" class="btn btn-danger">Modificar registro</button> 
+                <button type="button" class="btn btn-primary" routerLink="/listar-empleado" >Cancelar</button>
             </div>
 
 
